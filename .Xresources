@@ -1,0 +1,20 @@
+Xcursor.theme: xcursor-breeze
+Xcursor.size: 24
+
+! Fix scaling in Qtile
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! Urxvt config
+URxvt.font: xft:FiraCode Nerd Font Mono:size=11, xft:JoyPixels:size=11
+URxvt.scrollBar: false
+URxvt.background: #363636
+
+! Change blue URxvt color
+*color4: #99b898
+*color12: #99b898
