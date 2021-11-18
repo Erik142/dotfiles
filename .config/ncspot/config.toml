@@ -1,0 +1,21 @@
+use_nerdfont=true
+volnorm=true
+notify=true
+
+[theme]
+background = "#363636"
+primary = "#F1F1F1"
+secondary = "#DCDCDC"
+title = "#99B898"
+playing = "#99B898"
+playing_selected = "#99B898"
+playing_bg = "#363636"
+highlight = "#FECEAB"
+highlight_bg = "#242424"
+error = "#FFFFFF"
+error_bg = "#E84A5F"
+statusbar = "#FFFFFF"
+statusbar_progress = "#99B898"
+statusbar_bg = "#99B898"
+cmdline = "#CBFFDE"
+cmdline_bg = "#444444"
