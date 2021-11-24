@@ -59,8 +59,9 @@ def floatingWindows(client):
     dialog = client.window.get_wm_type() == "dialog"
     transient = client.window.get_wm_transient_for()
     onepassword = client.window.get_wm_class()[0] == "1Password"
+    dia = client.window.get_wm_class()[0] == "dia"
 
-    if dialog or transient or onepassword:
+    if (dialog or transient or onepassword) and not dia:
         window.floating = True
 
 
@@ -155,13 +156,16 @@ keys = [
         desc="Next keyboard layout",
     ),
     Key([mod], "e", lazy.spawn("rofi -show emoji")),
+    Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
 ]
 
 groups = [Group(i) for i in ["1: 👑", "2: 🤓", "3: 🖥", "4: 🧑‍🤝‍🧑"]]
 groups.append(
     Group(
         "5: 🌐",
-        matches=[Match(wm_class=["Google-chrome", "google-chrome", "qutebrowser"])],
+        matches=[
+            Match(wm_class=["Google-chrome", "google-chrome", "qutebrowser", "firefox"])
+        ],
     )
 )
 groups.append(
@@ -199,10 +203,10 @@ for i in groups:
 
 layouts = [
     layout.Columns(border_focus=getColors()[4], border_width=4, fair=True, margin=4),
-    layout.Max(),
+    # layout.Max(),
     # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
+    layout.Stack(num_stacks=1, margin=4),
+    layout.Bsp(margin=4, border_width=4),
     # layout.Matrix(),
     # layout.MonadTall(),
     # layout.MonadWide(),
@@ -252,6 +256,12 @@ screens = [
                 widget.Notify(max_chars=50),
                 widget.Systray(),
                 widget.KeyboardLayout(configured_keyboards=["eu", "se"], padding=8),
+                # widget.LaunchBar(
+                #    progs=[
+                #        ("restart", "restart", "Restart"),
+                #        ("logout", "qshell:self.qtile_shutdown()", "Logout"),
+                #    ]
+                # ),
                 widget.QuickExit(
                     default_text="🔌",
                     countdown_format="{}",
