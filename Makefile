@@ -5,7 +5,7 @@ all: bootstrap install
 
 .PHONY: bootstrap
 bootstrap:
-	./bootstrap.sh
+	@./bootstrap.sh
 
 .PHONY: install
 install:
