@@ -1,6 +1,6 @@
 if status is-interactive
   starship init fish | source
-  thefuck --alias | source
+  thefuck --alias ehh | source
   nvm use v18.11.0
   clear
 
