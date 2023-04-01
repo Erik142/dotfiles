@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if [ ! -z "$SKIP_BOOTSTRAP" ]; then
+  echo "SKIP_BOOTSTRAP=$SKIP_BOOTSTRAP, skipping bootstrap..."
+  exit 0
+fi
+
 SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"             # relative
 SCRIPT_PATH="$(cd -- "$SCRIPT_PATH" && pwd)"                    # absolutized and normalized
 
