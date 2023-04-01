@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "Hello from common script!"
+./nvim/.config/nvim/bootstrap.sh
