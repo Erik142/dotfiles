@@ -5,7 +5,7 @@ if [ ! -z "$SKIP_BOOTSTRAP" ]; then
   exit 0
 fi
 
-SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"             # relative
+SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"                 # relative
 SCRIPT_PATH="$(cd -- "$SCRIPT_PATH" && pwd)"                    # absolutized and normalized
 
 if [[ -z "$SCRIPT_PATH" ]] ; then
