@@ -1,19 +1,56 @@
-# Inserts a blank line between shell prompts
-add_newline = false
+format = """
+$kubernetes\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
 
-# Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[✗](bold red) "
-
-[java]
-symbol = "☕ "
+success_symbol = "[❯](white bold)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
 [kubernetes]
 disabled = false
+symbol = ""
+style = "green"
+format = '[$symbol$context( \($namespace\))]($style) '
+
+[git_branch]
+style = "yellow"
+format = '[($symbol$branch(:$remote_branch))]($style) '
 
 [git_state]
 disabled = true
 
 [git_status]
+format = '[(\[$ahead_behind\])]($style)'
+style = "yellow"
+conflicted = ""
+untracked = ""
+modified = ""
+staged = ""
+renamed = ""
+deleted = ""
+stashed = ""
+
+[directory]
+truncation_length = 1
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+style = "blue bold"
+format = '[\[$path\]]($style)[$read_only]($read_only_style) '
+
+[hostname]
+disabled = true
+
+[username]
+disabled = true
+
+[package]
+disabled = true
+
+[battery]
 disabled = true
