@@ -56,3 +56,7 @@ disabled = true
 
 [battery]
 disabled = true
+
+[cmd_duration]
+style = "white bold"
+format = '[took $duration]($style) '
