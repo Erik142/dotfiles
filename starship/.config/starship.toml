@@ -29,7 +29,7 @@ format = '[($symbol$branch(:$remote_branch))]($style) '
 disabled = true
 
 [git_status]
-format = '[(\[$ahead_behind\])]($style)'
+format = '[(\[$ahead_behind\])]($style) '
 style = "yellow"
 conflicted = ""
 untracked = ""
