@@ -2,6 +2,7 @@ format = """
 $kubernetes\
 $directory\
 $git_branch\
+$git_commit\
 $git_status\
 $cmd_duration\
 $line_break\
@@ -37,6 +38,9 @@ staged = ""
 renamed = ""
 deleted = ""
 stashed = ""
+
+[git_commit]
+style = "yellow bold"
 
 [directory]
 truncation_length = 1
