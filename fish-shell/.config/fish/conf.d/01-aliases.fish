@@ -12,5 +12,7 @@ alias tmux="tmux -u -S $HOME/.tmux.sock"
 alias g=git
 alias k=kubectl
 alias fzf="fzf --color=16,bg+:-1"
+
+abbr --add note zk edit --interactive
 abbr --add config vim $HOME/.config/fish/conf.d
 abbr --add reload source $HOME/.config/fish/conf.d/*.fish
