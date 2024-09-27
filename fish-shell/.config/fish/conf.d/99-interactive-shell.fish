@@ -4,8 +4,4 @@ if status is-interactive
   thefuck --alias ehh | source
   nvm use v18.11.0
 
-  if test (count $argv) -lt 2
-    clear
-    project-loop-wrapper.sh
-  end
 end
