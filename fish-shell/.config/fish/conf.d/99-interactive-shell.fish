@@ -5,4 +5,6 @@ if status is-interactive
   nvm use v18.11.0
   zoxide init --cmd cd fish | source
 
+  pyenv init - | source
+  source (pyenv virtualenv-init -|psub)
 end
