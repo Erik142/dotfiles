@@ -8,6 +8,7 @@ if test (uname) = Darwin
   alias cleardns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 end
 alias realpath="grealpath"
+alias cat="bat --theme='Catppuccin Macchiato'"
 alias tmux="tmux -u -S $HOME/.tmux.sock"
 alias g=git
 alias k=kubectl
