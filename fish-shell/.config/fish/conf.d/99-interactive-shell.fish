@@ -7,4 +7,5 @@ if status is-interactive
 
   pyenv init - | source
   source (pyenv virtualenv-init -|psub)
+  op completion fish | source
 end
