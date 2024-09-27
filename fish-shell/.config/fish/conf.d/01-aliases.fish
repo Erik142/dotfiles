@@ -9,5 +9,6 @@ if test (uname) = Darwin
 end
 alias realpath="grealpath"
 alias tmux="tmux -u -S $HOME/.tmux.sock"
+alias fzf="fzf --color=16,bg+:-1"
 abbr --add config vim $HOME/.config/fish/conf.d
 abbr --add reload source $HOME/.config/fish/conf.d/*.fish
