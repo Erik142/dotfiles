@@ -8,5 +8,6 @@ if test (uname) = Darwin
   alias cleardns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 end
 alias realpath="grealpath"
+alias tmux="tmux -u -S $HOME/.tmux.sock"
 abbr --add config vim $HOME/.config/fish/conf.d
 abbr --add reload source $HOME/.config/fish/conf.d/*.fish
