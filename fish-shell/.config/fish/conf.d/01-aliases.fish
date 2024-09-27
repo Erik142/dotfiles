@@ -1,6 +1,6 @@
 alias vim=nvim
 alias p=project
-alias ls=exa
+alias ls=eza
 alias ll='ls -l'
 alias tree='ls -T'
 if test (uname) = Darwin
