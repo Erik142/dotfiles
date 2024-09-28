@@ -9,7 +9,7 @@ if test (uname) = Darwin
 end
 alias realpath="grealpath"
 alias cat="bat --theme='Catppuccin Macchiato'"
-alias tmux="tmux -u -S $HOME/.tmux.sock"
+alias tmux="tmux -S $HOME/.tmux.sock"
 alias g=git
 alias k=kubectl
 alias fzf="fzf --color=16,bg+:-1"
