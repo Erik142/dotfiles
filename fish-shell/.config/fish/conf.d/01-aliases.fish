@@ -18,3 +18,4 @@ abbr --add note zk edit --interactive
 abbr --add config vim $HOME/.config/fish/conf.d
 abbr --add reload source $HOME/.config/fish/conf.d/*.fish
 abbr --add cdgr 'cd $(git rev-parse --show-toplevel)'
+abbr --add cargou 'cargo install $(cargo install --list | egrep \'^[a-z0-9_-]+ v[0-9.]+:$\' | cut -f1 -d\' \')'
