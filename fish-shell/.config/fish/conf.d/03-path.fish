@@ -7,4 +7,9 @@ if status is-interactive
   fish_add_path -m $PYENV_ROOT/shims
   fish_add_path -g $HOME/.cargo/bin
   fish_add_path -g $HOME/go/bin
+
+  if test (uname) != "Darwin"
+    fish_add_path -g $HOME/.pyenv/bin
+    fish_add_path -g $HOME/.local/bin
+  end
 end
