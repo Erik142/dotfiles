@@ -16,4 +16,5 @@ if status is-interactive
   fish_add_path -m $PYENV_ROOT/shims
   fish_add_path -g $HOME/.cargo/bin
   fish_add_path -g $HOME/go/bin
+  fish_add_path -g $HOME/.dotfiles/bin
 end
