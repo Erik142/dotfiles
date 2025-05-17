@@ -6,8 +6,8 @@ alias tree='ls -T'
 if test (uname) = Darwin
   alias renode='/Applications/Renode.app/Contents/MacOS/macos_run.command --console'
   alias cleardns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+  alias realpath="grealpath"
 end
-alias realpath="grealpath"
 alias cat="bat --theme='Catppuccin Macchiato'"
 alias tmux="tmux -S $HOME/.tmux.sock"
 alias g=git
