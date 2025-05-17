@@ -1,0 +1,31 @@
+session: "${session_name}"
+env: {}
+root: "${session_root}"
+before_start: []
+stop: []
+tmux_options:
+  socket_name: ""
+  socket_path: "$HOME/.tmux.sock"
+  config_file: ""
+windows:
+- name: editor
+  before_start: []
+  root: .
+  commands:
+    - nvim .
+  panes:
+  - commands: []
+  layout: 3f8e,230x61,0,0[230x45,0,0,3,230x15,0,46,6]
+- name: git
+  before_start: []
+  root: .
+  commands:
+    - lazygit
+- name: misc
+  before_start: []
+  root: .
+  panes:
+  - commands: []
+  commands: []
+  layout: 150d,230x61,0,0{114x61,0,0,5,115x61,115,0,8}
+

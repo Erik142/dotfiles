@@ -1,0 +1,29 @@
+{
+  "general": {
+    "max_log_level": "INFO",
+    "fzf": {
+      "extra_options": "--color=16,bg+:-1"
+    }
+  },
+  "git": {
+    "project_dirs": [
+      "$HOME/Projekt",
+      "$HOME/Plugg"
+    ],
+    "excluded_dirs": [
+      "$HOME/Library/*",
+      "$HOME/.**/*"
+    ],
+    "extra_fd_args": "--max-depth 6",
+    "action": "smug start code-project --attach session_root=\"$git_repository_path\"  session_name=\"$session_name\""
+  },
+  "git_remote": {
+    "repos_path": "$HOME/Projekt/"
+  },
+  "scratchpad": {
+    "action": "smug start scratchpad --attach session_name=\"$session_name\""
+  },
+  "tmux": {
+    "extra_options": "-u -S $HOME/.tmux.sock"
+  }
+}

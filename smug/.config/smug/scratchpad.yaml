@@ -1,0 +1,17 @@
+session: "${session_name}"
+tmux_options:
+  socket_name: ""
+  socket_path: "$HOME/.tmux.sock"
+  config_file: ""
+env: {}
+root: "~/"
+before_start: []
+stop: []
+windows:
+- name: scratchpad
+  root: .
+  before_start: []
+  panes: []
+  commands: []
+  layout: b35e,230x61,0,0,1
+
