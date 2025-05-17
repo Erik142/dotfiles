@@ -15,4 +15,6 @@ set -gx LANG en_US.UTF-8
 set -gx FZF_DEFAULT_OPTS "--color=16,bg+:-1"
 
 set -Ux nvm_default_version v18.11.0
+
+set -gx fish_config_type "public"
 set fish_greeting
