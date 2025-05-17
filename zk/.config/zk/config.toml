@@ -1,0 +1,6 @@
+[tool]
+fzf-options = "--color=16,bg+:-1 --height 100 --layout reverse --preview-window wrap --no-hscroll"
+[alias]
+rm = 'zk list -i -f "{{abs-path}}" "$argv"  | xargs rm -rf'
+[notebook]
+dir = "~/notes"
