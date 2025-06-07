@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 TMUX_STORAGE_DIR="$HOME/.tmux"
-TMUX_STORAGE_FILE="${TMUX_STORAGE_FILE}/storage_data"
+TMUX_STORAGE_FILE="${TMUX_STORAGE_DIR}/storage_data"
 
 ETH_INTERFACES=""
 
