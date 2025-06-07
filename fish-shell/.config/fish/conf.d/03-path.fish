@@ -8,9 +8,9 @@ if status is-interactive
     fish_add_path /opt/homebrew/opt/gnu-getopt/bin
   else
     fish_add_path -g $PYENV_ROOT/bin
-    fish_add_path -g $HOME/.local/bin
   end
 
+  fish_add_path -g $HOME/.local/bin
   fish_add_path $HOME/bin $HOME/.luarocks/bin /Users/erikwahlberger/.gem/ruby/3.1.0/bin
 
   fish_add_path -m $PYENV_ROOT/shims
