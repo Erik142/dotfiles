@@ -2,6 +2,7 @@
 
 TMUX_STORAGE_DIR="$HOME/.tmux"
 TMUX_STORAGE_FILE="${TMUX_STORAGE_DIR}/storage_data"
+TMUX_STORAGE_MOUNT_POINT="/System/Volumes/Data"
 
 ETH_INTERFACES="en0"
 
@@ -45,11 +46,15 @@ function get_storage_data() {
 
   if [ "$(date +%S)" != "00" ]; then
     if [ ! -f "${TMUX_STORAGE_FILE}" ]; then
-      echo "Storage data not available"
+      echo "N/A"
       return
     fi
   else
-    df --output=used,size -h / | tail -1 | xargs echo -n | tr ' ' '/' > "${TMUX_STORAGE_FILE}"
+    if [ "$(uname -s)" == "Darwin" ]; then
+      df -H --libxo=json "${TMUX_STORAGE_MOUNT_POINT}" | jq -r '"\(."storage-system-information".filesystem[0].used)/\(."storage-system-information".filesystem[0].blocks)"' > "${TMUX_STORAGE_FILE}" 2>/dev/null
+    else
+      df --output=used,size -h "${TMUX_STORAGE_MOUNT_POINT}" | tail -1 | xargs echo -n | tr ' ' '/' > "${TMUX_STORAGE_FILE}"
+    fi
   fi
 
   cat "${TMUX_STORAGE_FILE}"
