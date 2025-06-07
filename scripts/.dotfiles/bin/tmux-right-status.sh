@@ -3,7 +3,7 @@
 TMUX_STORAGE_DIR="$HOME/.tmux"
 TMUX_STORAGE_FILE="${TMUX_STORAGE_DIR}/storage_data"
 
-ETH_INTERFACES=""
+ETH_INTERFACES="en0"
 
 MODULES="time"
 
@@ -16,7 +16,7 @@ function get_interface_ip() {
 
   interface="$1"
 
-  ip -f inet address show "$interface" | grep -Po 'inet \K[\d.]+'
+  ip addr show "$interface" | grep -E "^[[:space:]]*inet " | xargs | cut -d" " -f2 | cut -d "/" -f1
 }
 
 function get_ip_data() {
