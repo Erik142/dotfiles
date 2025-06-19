@@ -17,7 +17,11 @@ function get_interface_ip() {
 
   interface="$1"
 
-  ip addr show "$interface" | grep -E "^[[:space:]]*inet " | xargs | cut -d" " -f2 | cut -d "/" -f1
+  if [ "$(uname -s)" == "Darwin" ]; then
+    ifconfig "$interface" | grep "^[[:space:]]*inet " | xargs | cut -d" " -f2
+  else
+    ip addr show "$interface" | grep "^[[:space:]]*inet " | xargs | cut -d" " -f2 | cut -d "/" -f1
+  fi
 }
 
 function get_ip_data() {
