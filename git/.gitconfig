@@ -1,0 +1,81 @@
+[alias]
+  graph = log --all --graph --decorate --oneline
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ignore = "!gi() { local IFS=','; curl -sL https://www.toptal.com/developers/gitignore/api/\"$*\"; }; gi"
+
+[branch]
+  sort = -committerdate
+
+[credential]
+	credentialstore = gpg
+	helper = /usr/local/share/gcm-core/git-credential-manager
+
+[credential "https://git.wahlberger.dev"]
+	provider = generic
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+
+[commit]
+	gpgsign = true
+  verbose = true
+
+[core]
+  compression = 9
+	pager = delta
+  whitespace = trailing-space
+
+[delta]
+	navigate = true    # use n and N to move between diff sections
+	light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+	side-by-side = true
+	syntax-theme = gruvbox-dark
+
+[diff]
+	colorMoved = default
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[gpg]
+	format = ssh
+
+[help]
+  autocorrect = prompt
+
+[init]
+	defaultBranch = main
+
+[interactive]
+	diffFilter = delta --color-only
+
+[maintenance]
+  auto = true
+  strategy = incremental
+
+[merge]
+	conflictstyle = diff3
+
+[rerere]
+  enabled = true
+  autoupdate = false
+
+[status]
+  branch = true
+
+[tag]
+  sort = -version:refname
+
+[user]
+	name = Erik Wahlberger
+	email = erik@wahlberger.dev
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6FXj6vzchd6Jnul7BgBipTTPEc8pH6QZymtS4m45krKA7cUwRZQqkK5L+eULbq/1jXx0EEtRf1YDL1D81MREqpicVCXkRjzp/XcUcGFfbIHZj3Z992x/CVU10AzooiT87tUKeqKeHU3PMMy6IBbWLnMXC6IAH14Qu+3gpseAkUW99gcDvKPZ7SYxETLC7URR6vYsHzqCLtFgpVCaOrDoIe5D9Jr3ByXP6tYIs224YgqzMnVdllb2K1Qp1wkiB+u9Q49TJ+ozxcPbdR6r2VHWrQw85pNIHwouqlehMWAl0/AjbRuXfc+c2859gGJeMpPF76TPhgdd81gBw3OBfqU0QzpGwP6s5RTeQW7/OPTG1pfZhEHQ8HWUvDWsxJpVXdnBtX+RZ2dciZRlA6dE/fDwtL5RBlQI3a02D8kLo0DApnVjkJLnvGuiJ91jILu5d5eiURNGGh2vUw0d/HYGKY2phBmzK4hecYIDmnBmcYpNPHcgnQWn0qnCwmRekbDmDze9pxgEZyzI9S8Gp9KcCvRWtjDFQ7EkyscxH2bxt33jtPblk6W+KWClQ6vxsJ5mG+Rxr8cPTVrIYmQ66owd7BV2BUlV2fwngUHtrp3TFYP1zpRki2yobh1oQ6WhWDooDea5dDN/QO2XqPWR3uUX6To+AmqfCV1L8tpH1gudggiJQTw==
+
+[include]
+  path = .gitconfig.darwin
+
+[include]
+  path = .gitconfig.linux
