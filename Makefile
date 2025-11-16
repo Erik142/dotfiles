@@ -1,4 +1,6 @@
 OS_PLATFORM = $(shell uname)
+ALL_OS_PLATFORMS := Darwin Linux
+EXCLUDED_OS_PLATFORMS := $(shell echo $(filter-out $(OS_PLATFORM), $(ALL_OS_PLATFORMS)) | tr '[:upper:]' '[:lower:]')
 
 .PHONY: all
 all: bootstrap install
@@ -9,7 +11,7 @@ bootstrap:
 
 .PHONY: install
 install:
-	stow --verbose --target=$$HOME --restow */
+	stow --verbose --target=$$HOME --restow --ignore=.*\.$(EXCLUDED_OS_PLATFORMS) */
 
 .PHONY: uninstall
 uninstall:
