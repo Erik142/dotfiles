@@ -6,7 +6,7 @@ TMUX_STORAGE_MOUNT_POINT="/System/Volumes/Data"
 
 ETH_INTERFACES="en0"
 
-MODULES="ip storage time"
+MODULES="ip storage"
 
 function get_interface_ip() {
   local interface
