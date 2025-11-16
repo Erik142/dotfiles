@@ -3,7 +3,7 @@ if status is-interactive
   set -gx PYENV_ROOT $HOME/.pyenv
 
   if test (uname) = "Darwin"
-    fish_add_path /opt/homebrew/lib/ruby/gems/3.1.0/bin/ /opt/homebrew/opt/ruby@3.1/bin /opt/local/bin /opt/local/sbin /opt/homebrew/opt/python/libexec/bin /opt/homebrew/opt/gnu-sed/libexec/gnubin
+    fish_add_path /opt/homebrew/lib/ruby/gems/3.1.0/bin/ /opt/homebrew/opt/ruby@3.1/bin /opt/local/bin /opt/local/sbin /opt/homebrew/opt/python/libexec/bin /opt/homebrew/opt/gnu-sed/libexec/gnubin /opt/homebrew/opt/make/libexec/gnubin
     fish_add_path /opt/homebrew/opt/llvm/bin
     fish_add_path /opt/homebrew/opt/gnu-getopt/bin
   else
