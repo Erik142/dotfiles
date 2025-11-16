@@ -9,6 +9,7 @@ tmux_options:
   config_file: ""
 windows:
 - name: editor
+  selected: true
   before_start: []
   root: .
   commands:

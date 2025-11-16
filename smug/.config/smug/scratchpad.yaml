@@ -9,6 +9,7 @@ before_start: []
 stop: []
 windows:
 - name: scratchpad
+  selected: true
   root: .
   before_start: []
   panes: []
